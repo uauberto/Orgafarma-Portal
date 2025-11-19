@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NAV_LINKS, PORTAL_URL, SYSTEM_LINKS, PEDIDO_ELETRONICO_URL, REGISTER_URL } from '../constants.ts';
+import { NAV_LINKS, PORTAL_URL, SYSTEM_LINKS, PEDIDO_ELETRONICO_URL, REGISTER_URL } from '../constants';
 import { Menu, X, User, ChevronDown, ExternalLink, UserPlus, ShoppingCart } from 'lucide-react';
 
 const Header: React.FC = () => {

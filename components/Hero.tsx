@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
-import { PORTAL_URL, PEDIDO_ELETRONICO_URL } from '../constants.ts';
-import FadeInOnScroll from './FadeInOnScroll.tsx';
+import { PORTAL_URL, PEDIDO_ELETRONICO_URL } from '../constants';
+import FadeInOnScroll from './FadeInOnScroll';
 
 const Hero: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);

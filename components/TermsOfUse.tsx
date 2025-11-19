@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { COMPANY_INFO } from '../constants.ts';
+import { COMPANY_INFO } from '../constants';
 import { FileCheck, AlertTriangle, Briefcase } from 'lucide-react';
 
 const TermsOfUse: React.FC = () => {

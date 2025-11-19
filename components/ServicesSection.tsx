@@ -1,7 +1,7 @@
 import React from 'react';
-import { SERVICES } from '../constants.ts';
+import { SERVICES } from '../constants';
 import { Truck, ShieldCheck, Activity, Users, LucideIcon } from 'lucide-react';
-import FadeInOnScroll from './FadeInOnScroll.tsx';
+import FadeInOnScroll from './FadeInOnScroll';
 
 const iconMap: Record<string, LucideIcon> = {
   Truck,

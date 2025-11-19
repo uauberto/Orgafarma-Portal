@@ -1,7 +1,7 @@
 import React from 'react';
-import { ABOUT_TEXT, CORPORATE_IDENTITY, HISTORY_DATA } from '../constants.ts';
+import { ABOUT_TEXT, CORPORATE_IDENTITY, HISTORY_DATA } from '../constants';
 import { Target, Eye, Scale, LucideIcon } from 'lucide-react';
-import FadeInOnScroll from './FadeInOnScroll.tsx';
+import FadeInOnScroll from './FadeInOnScroll';
 
 const iconMap: Record<string, LucideIcon> = {
   Target,

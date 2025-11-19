@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { COMPANY_INFO } from '../constants.ts';
+import { COMPANY_INFO } from '../constants';
 import { Shield, Lock, Eye, FileText, Cookie } from 'lucide-react';
 
 const PrivacyPolicy: React.FC = () => {

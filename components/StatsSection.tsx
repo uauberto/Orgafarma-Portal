@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver.ts';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const stats = [
   { label: 'Clientes Ativos', value: '25k+' },

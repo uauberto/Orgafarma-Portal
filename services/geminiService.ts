@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { ChatMessage } from "../types.ts";
+import { ChatMessage } from "../types";
 
 const apiKey = (typeof process !== 'undefined' ? process.env?.API_KEY : undefined) || '';
 const ai = new GoogleGenAI({ apiKey });

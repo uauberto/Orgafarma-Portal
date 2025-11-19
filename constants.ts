@@ -1,4 +1,4 @@
-import { ServiceItem, Testimonial } from './types.ts';
+import { ServiceItem, Testimonial } from './types';
 
 export const BRAND_COLORS = {
   primary: '#0B2A48', // Pantone 2767 C

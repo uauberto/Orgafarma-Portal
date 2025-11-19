@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header.tsx';
-import Hero from './components/Hero.tsx';
-import ServicesSection from './components/ServicesSection.tsx';
-import StatsSection from './components/StatsSection.tsx';
-import AboutSection from './components/AboutSection.tsx';
-import Footer from './components/Footer.tsx';
-import PrivacyPolicy from './components/PrivacyPolicy.tsx';
-import TermsOfUse from './components/TermsOfUse.tsx';
-import BackToTop from './components/BackToTop.tsx';
-import { REGISTER_URL } from './constants.ts';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import ServicesSection from './components/ServicesSection';
+import StatsSection from './components/StatsSection';
+import AboutSection from './components/AboutSection';
+import Footer from './components/Footer';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse';
+import BackToTop from './components/BackToTop';
+import { REGISTER_URL } from './constants';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState('home');

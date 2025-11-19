@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink, Briefcase } from 'lucide-react';
-import { OFFICES, SYSTEM_LINKS, COMPANY_INFO, CAREERS_URL, PEDIDO_ELETRONICO_URL } from '../constants.ts';
+import { OFFICES, SYSTEM_LINKS, COMPANY_INFO, CAREERS_URL, PEDIDO_ELETRONICO_URL } from '../constants';
 
 const Footer: React.FC = () => {
   const OrgafarmaLogoNegative = ({ className }: { className?: string }) => (
