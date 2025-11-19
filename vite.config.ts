@@ -1,14 +1,12 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // O base DEVE corresponder ao nome do seu repositório no GitHub
-  base: '/Orgafarma-Portal/', 
+  base: '/Orgafarma-Portal/',
   build: {
-    outDir: 'dist',
+    outDir: 'docs',        // ← AQUI muda de dist para docs
     assetsDir: 'assets',
     sourcemap: false
   }
-});
+})
