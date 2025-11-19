@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grupo Orgafarma | Excelência Farmacêutica</title>
     
-    <!-- Tailwind CSS via CDN is fine for simple setups, but ideally managed via PostCSS in Vite. 
-         Keeping CDN for simplicity as per current setup. -->
+    <!-- Tailwind CSS via CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -75,7 +74,7 @@
 </head>
   <body>
     <div id="root"></div>
-    <!-- Vite injetará o script corretamente baseado no 'base' configurado no vite.config.ts -->
+    <!-- Entry point for Vite. During 'npm run build', Vite will replace this with the bundled JS file path. -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
