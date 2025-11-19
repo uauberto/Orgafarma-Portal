@@ -1,9 +1,8 @@
 import React from 'react';
-import { SERVICES } from '../constants';
+import { SERVICES } from '../constants.ts';
 import { Truck, ShieldCheck, Activity, Users, LucideIcon } from 'lucide-react';
-import FadeInOnScroll from './FadeInOnScroll';
+import FadeInOnScroll from './FadeInOnScroll.tsx';
 
-// Map string icon names to components
 const iconMap: Record<string, LucideIcon> = {
   Truck,
   ShieldCheck,

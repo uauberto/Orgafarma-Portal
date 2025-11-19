@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver.ts';
 
 const stats = [
   { label: 'Clientes Ativos', value: '25k+' },
@@ -13,13 +13,9 @@ const AnimatedCounter = ({ value }: { value: string }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(elementRef, { threshold: 0.3 });
 
-  // Extract number and surrounding text (prefix/suffix)
-  // Example: "+55" -> prefix: "+", number: 55
-  // Example: "25k+" -> number: 25, suffix: "k+"
   const numberMatch = value.match(/\d+/);
   const targetNumber = numberMatch ? parseInt(numberMatch[0], 10) : 0;
   
-  // Split parts
   const parts = value.split(/\d+/);
   const prefix = parts[0];
   const suffix = parts[1];
@@ -28,13 +24,12 @@ const AnimatedCounter = ({ value }: { value: string }) => {
     if (!isVisible || targetNumber === 0) return;
 
     let startTime: number | null = null;
-    const duration = 2000; // 2 seconds animation
+    const duration = 2000; 
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       
-      // Ease out quart formula for smooth landing
       const easeOut = 1 - Math.pow(1 - progress, 4);
       
       setCount(Math.floor(easeOut * targetNumber));
@@ -42,7 +37,7 @@ const AnimatedCounter = ({ value }: { value: string }) => {
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
-        setCount(targetNumber); // Ensure it lands exactly on target
+        setCount(targetNumber); 
       }
     };
 
@@ -61,7 +56,6 @@ const AnimatedCounter = ({ value }: { value: string }) => {
 const StatsSection: React.FC = () => {
   return (
     <section className="py-24 bg-brand-dark relative overflow-hidden">
-      {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-light rounded-full opacity-5 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#051a30] to-transparent opacity-50"></div>

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, ExternalLink, Briefcase } from 'lucide-react';
-import { OFFICES, SYSTEM_LINKS, COMPANY_INFO, CAREERS_URL, PEDIDO_ELETRONICO_URL } from '../constants';
+import { OFFICES, SYSTEM_LINKS, COMPANY_INFO, CAREERS_URL, PEDIDO_ELETRONICO_URL } from '../constants.ts';
 
 const Footer: React.FC = () => {
-  // Official Symbol Recreation (Negative variant for dark footer)
   const OrgafarmaLogoNegative = ({ className }: { className?: string }) => (
     <svg viewBox="0 0 100 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="42" y="0" width="16" height="20" rx="2" fill="#FFFFFF" />
@@ -17,28 +16,17 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
-          {/* Column 1: Brand - STRICT MANUAL GUIDELINES APPLIED */}
           <div className="space-y-8 flex flex-col items-start">
-            {/* Vertical Lockup as per "Utilização Singular da Marca" when using Slogan */}
             <div className="flex flex-col items-center w-fit group">
-                {/* Symbol */}
                 <div className="mb-4">
                     <OrgafarmaLogoNegative className="h-24 w-auto" />
                 </div>
                 
-                {/* Logotype */}
                 <div className="flex flex-col leading-none justify-center items-center mb-3">
                     <span className="text-lg tracking-[0.3em] font-light text-gray-200 mb-1">GRUPO</span>
                     <span className="text-3xl tracking-widest font-extrabold text-white">ORGAFARMA</span>
                 </div>
 
-                {/* Slogan - STRICT GUIDELINES:
-                    - Below logo
-                    - Extend start to end (Justified width)
-                    - Gotham Black (Used Montserrat Black/900)
-                    - All Caps
-                    - Spacing approx half logo size (handled by mb-3 above and visual gap)
-                */}
                 <h2 className="text-[0.55rem] font-black tracking-[0.08em] uppercase text-brand-light w-full text-justify leading-tight">
                     DISTRIBUIDORA DE PRODUTOS FARMACÊUTICOS
                 </h2>
@@ -65,14 +53,12 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Links & Sistemas */}
           <div>
             <h4 className="text-brand-light font-bold uppercase tracking-widest text-sm mb-6">Acesso Rápido</h4>
             
             <div className="mb-8">
                 <h5 className="text-xs font-bold text-gray-500 uppercase mb-3">Sistemas</h5>
                 <ul className="space-y-3 text-sm text-gray-400">
-                    {/* Pedido Eletrônico Highlighted */}
                     <li>
                         <a 
                             href={PEDIDO_ELETRONICO_URL} 
@@ -100,6 +86,19 @@ const Footer: React.FC = () => {
                         </a>
                         </li>
                     ))}
+                    
+                     {/* Manual Addition of Portal Link for Footer Access */}
+                    <li>
+                        <a 
+                            href="https://clientes.orgafarma.com.br/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="hover:text-white transition-colors flex items-center group"
+                        >
+                            <ExternalLink size={12} className="mr-2 opacity-50 group-hover:opacity-100 text-brand-light" />
+                            Área do Cliente
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -116,7 +115,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 3 & 4: Unidades (Spanning 2 cols on large) */}
           <div className="lg:col-span-2">
             <h4 className="text-brand-light font-bold uppercase tracking-widest text-sm mb-8">Nossas Unidades</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
-import { PORTAL_URL, PEDIDO_ELETRONICO_URL } from '../constants';
-import FadeInOnScroll from './FadeInOnScroll';
+import { PORTAL_URL, PEDIDO_ELETRONICO_URL } from '../constants.ts';
+import FadeInOnScroll from './FadeInOnScroll.tsx';
 
 const Hero: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  // Trigger load state on mount as fallback
   useEffect(() => {
     const timer = setTimeout(() => setImageLoaded(true), 100);
     return () => clearTimeout(timer);
@@ -14,26 +13,21 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-brand-dark">
-      {/* Background Image with Brand Overlay */}
       <div className="absolute inset-0 z-0">
-        {/* Using a more clinical/abstract lab image */}
         <img 
           src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
           alt="Distribuição Farmacêutica" 
           onLoad={() => setImageLoaded(true)}
           className={`w-full h-full object-cover transition-opacity duration-1000 ease-out ${imageLoaded ? 'opacity-40' : 'opacity-0'}`}
         />
-        {/* Gradient overlay using official colors */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-brand-dark/70" />
         
-        {/* Abstract shapes for animation */}
         <div className="absolute top-20 right-0 w-96 h-96 bg-brand-light/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
         <div className="absolute bottom-0 left-20 w-64 h-64 bg-brand-light/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center mt-10">
         
-        {/* Text Content using FadeInOnScroll for robust animation */}
         <FadeInOnScroll className="text-white space-y-8 max-w-4xl flex flex-col items-center">
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
@@ -46,7 +40,6 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 pt-8 w-full sm:w-auto">
-            {/* Portal Button (Was Services) - Secondary Style */}
             <a 
               href={PORTAL_URL}
               target="_blank"
@@ -57,7 +50,6 @@ const Hero: React.FC = () => {
               Área do Cliente
             </a>
 
-            {/* Pedido Eletronico (Was Access Portal) - Primary Highlight Style */}
             <a 
               href={PEDIDO_ELETRONICO_URL}
               target="_blank"

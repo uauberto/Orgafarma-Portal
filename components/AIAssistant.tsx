@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X, Send, Loader2, Sparkles } from 'lucide-react';
-import { sendMessageToGemini } from '../services/geminiService';
-import { ChatMessage } from '../types';
+import { sendMessageToGemini } from '../services/geminiService.ts';
+import { ChatMessage } from '../types.ts';
 
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,11 +41,9 @@ const AIAssistant: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
-      {/* Chat Window */}
       {isOpen && (
         <div className="mb-4 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300 flex flex-col h-[500px]">
           
-          {/* Header */}
           <div className="bg-brand-dark p-5 flex justify-between items-center text-white shadow-md relative overflow-hidden">
             <div className="absolute top-0 right-0 w-20 h-20 bg-brand-light rounded-full blur-2xl opacity-20 -mr-4 -mt-4"></div>
             
@@ -68,7 +66,6 @@ const AIAssistant: React.FC = () => {
             </button>
           </div>
 
-          {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-4 bg-brand-surface space-y-4">
             {messages.map((msg, idx) => (
               <div 
@@ -97,7 +94,6 @@ const AIAssistant: React.FC = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input Area */}
           <div className="p-4 bg-white border-t border-gray-100">
             <div className="flex items-center bg-gray-50 rounded-xl px-4 py-2.5 focus-within:ring-2 focus-within:ring-brand-light/50 border border-transparent focus-within:border-brand-light transition-all">
               <input
@@ -126,7 +122,6 @@ const AIAssistant: React.FC = () => {
         </div>
       )}
 
-      {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`group p-4 rounded-full shadow-2xl shadow-brand-dark/30 transition-all duration-500 hover:scale-110 active:scale-95 flex items-center justify-center relative ${

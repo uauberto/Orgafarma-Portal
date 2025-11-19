@@ -1,4 +1,4 @@
-import { ServiceItem, Testimonial } from './types';
+import { ServiceItem, Testimonial } from './types.ts';
 
 export const BRAND_COLORS = {
   primary: '#0B2A48', // Pantone 2767 C
@@ -10,7 +10,7 @@ export const BRAND_COLORS = {
 export const PORTAL_URL = 'https://clientes.orgafarma.com.br/';
 export const PEDIDO_ELETRONICO_URL = 'https://grupoorgafarma.com.br/';
 export const CAREERS_URL = 'https://orgafarmaorganizacaofarmaceutica.vagas.solides.com.br';
-export const REGISTER_URL = 'https://clientes.orgafarma.com.br/cadastro'; // Assuming registration is here
+export const REGISTER_URL = 'https://clientes.orgafarma.com.br/cadastro';
 
 export const COMPANY_INFO = {
   razaoSocial: 'Orgafarma Organização Farmacêutica Ltda',
@@ -21,9 +21,8 @@ export const COMPANY_INFO = {
 
 export const SYSTEM_LINKS = [
   { name: 'Organize', href: 'https://organize.grupoorgafarma.com.br/', highlight: false },
-  { name: 'Área do Cliente', href: 'https://clientes.orgafarma.com.br/', highlight: false },
   { name: 'Webmail', href: 'https://outlook.office.com/mail/', highlight: false },
-  // Note: Pedido Eletrônico is handled separately in UI for maximum highlight, but kept in lists where needed manually
+  // Note: Pedido Eletrônico is handled separately in UI for maximum highlight
 ];
 
 export const OFFICES = [

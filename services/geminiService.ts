@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
-import { ChatMessage } from "../types";
+import { ChatMessage } from "../types.ts";
 
-const apiKey = process.env.API_KEY || '';
+const apiKey = (typeof process !== 'undefined' ? process.env?.API_KEY : undefined) || '';
 const ai = new GoogleGenAI({ apiKey });
 
 const SYSTEM_INSTRUCTION = `
@@ -28,12 +28,6 @@ export const sendMessageToGemini = async (
 
     const model = "gemini-2.5-flash";
     
-    // Construct history for the API
-    // Note: The GoogleGenAI SDK handles history slightly differently in chat mode,
-    // but for a single generateContent call with context, we can simulate it or use chat.
-    // Here we use a simple generateContent with system instruction context for statelessness simplicity in this demo,
-    // or use chat for stateful. Let's use the chat interface properly.
-
     const chat = ai.chats.create({
       model: model,
       config: {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { COMPANY_INFO } from '../constants';
+import { COMPANY_INFO } from '../constants.ts';
 import { FileCheck, AlertTriangle, Briefcase } from 'lucide-react';
 
 const TermsOfUse: React.FC = () => {
@@ -9,7 +9,6 @@ const TermsOfUse: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen pb-20">
-      {/* Header Banner */}
       <div className="bg-brand-dark pt-32 pb-16 px-6">
         <div className="container mx-auto max-w-4xl text-center text-white">
           <div className="inline-flex items-center justify-center p-3 bg-brand-light/20 rounded-full mb-6">
@@ -22,7 +21,6 @@ const TermsOfUse: React.FC = () => {
         </div>
       </div>
 
-      {/* Content */}
       <div className="container mx-auto px-6 max-w-4xl -mt-10 relative z-10">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-10 text-gray-700 leading-relaxed">
           

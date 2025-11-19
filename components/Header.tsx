@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NAV_LINKS, PORTAL_URL, SYSTEM_LINKS, PEDIDO_ELETRONICO_URL, REGISTER_URL } from '../constants';
+import { NAV_LINKS, PORTAL_URL, SYSTEM_LINKS, PEDIDO_ELETRONICO_URL, REGISTER_URL } from '../constants.ts';
 import { Menu, X, User, ChevronDown, ExternalLink, UserPlus, ShoppingCart } from 'lucide-react';
 
 const Header: React.FC = () => {
@@ -15,19 +15,13 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Logo Component with Variant Support
   const OrgafarmaLogo = ({ className, variant }: { className?: string; variant: 'positive' | 'negative' }) => {
-    // Positive: Dark Blue (#0B2A48) parts
-    // Negative: White (#FFFFFF) parts
     const mainColor = variant === 'positive' ? '#0B2A48' : '#FFFFFF';
     
     return (
       <svg viewBox="0 0 100 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Top Stem */}
         <rect x="42" y="0" width="16" height="20" rx="2" fill={mainColor} />
-        {/* Outer Circle */}
         <circle cx="50" cy="65" r="45" stroke={mainColor} strokeWidth="10" />
-        {/* Inner Circle - Always Brand Light Blue (#70AABD) */}
         <circle cx="50" cy="65" r="28" fill="#70AABD" />
       </svg>
     );
@@ -40,7 +34,6 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo area - Removed Link, Added Responsiveness */}
         <div className="flex items-center gap-2 md:gap-3 select-none shrink-0">
           <OrgafarmaLogo 
             className="h-8 w-auto md:h-10 transition-all duration-300" 
@@ -56,7 +49,6 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Desktop Nav */}
         <div className="hidden xl:flex items-center space-x-8">
           <nav className="flex items-center space-x-6">
             {NAV_LINKS.map((link) => (
@@ -72,7 +64,6 @@ const Header: React.FC = () => {
               </a>
             ))}
 
-            {/* Systems Dropdown */}
             <div 
               className="relative group"
               onMouseEnter={() => setSystemsDropdownOpen(true)}
@@ -86,10 +77,8 @@ const Header: React.FC = () => {
                 Sistemas <ChevronDown size={14} />
               </button>
               
-              {/* Dropdown Menu */}
               <div className={`absolute top-full right-0 pt-2 w-56 transition-all duration-200 origin-top-right ${systemsDropdownOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
                 <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden py-2">
-                   {/* Included link inside dropdown for completeness */}
                    <a
                       href={PEDIDO_ELETRONICO_URL}
                       target="_blank"
@@ -122,7 +111,6 @@ const Header: React.FC = () => {
           </nav>
           
           <div className="flex items-center gap-3 pl-4 border-l border-white/20">
-            {/* Pedido Eletronico - Highlighted CTA */}
             <a 
                 href={PEDIDO_ELETRONICO_URL}
                 target="_blank"
@@ -133,7 +121,6 @@ const Header: React.FC = () => {
                     : 'bg-brand-light text-white hover:bg-white hover:text-brand-light hover:shadow-white/20'
                 }`}
             >
-                {/* Pulsing effect */}
                 <span className="absolute inset-0 rounded-full ring-2 ring-white/50 animate-ping opacity-20 group-hover:opacity-0"></span>
                 <span className="relative z-10 flex items-center gap-2">
                   <ShoppingCart size={16} />
@@ -141,7 +128,6 @@ const Header: React.FC = () => {
                 </span>
             </a>
 
-            {/* Portal Button - Secondary */}
             <a 
                 href={PORTAL_URL}
                 target="_blank"
@@ -156,7 +142,6 @@ const Header: React.FC = () => {
                 Área do Cliente
             </a>
 
-            {/* Quero Ser Cliente - Action Button */}
             <a 
                 href={REGISTER_URL}
                 target="_blank"
@@ -173,9 +158,7 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Toggle & Actions */}
         <div className="flex items-center space-x-2 md:space-x-4 xl:hidden">
-           {/* Mobile Highlight Icon - NOW FULL TEXT */}
            <a 
             href={PEDIDO_ELETRONICO_URL}
             target="_blank"
@@ -199,7 +182,6 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-2xl p-6 flex flex-col space-y-4 animate-in slide-in-from-top-5 fade-in duration-200 max-h-[80vh] overflow-y-auto">
           {NAV_LINKS.map((link) => (

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ABOUT_TEXT, CORPORATE_IDENTITY, HISTORY_DATA } from '../constants';
+import { ABOUT_TEXT, CORPORATE_IDENTITY, HISTORY_DATA } from '../constants.ts';
 import { Target, Eye, Scale, LucideIcon } from 'lucide-react';
-import FadeInOnScroll from './FadeInOnScroll';
+import FadeInOnScroll from './FadeInOnScroll.tsx';
 
 const iconMap: Record<string, LucideIcon> = {
   Target,
@@ -14,7 +14,6 @@ const AboutSection: React.FC = () => {
     <section id="about" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         
-        {/* QUEM SOMOS */}
         <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
           <div className="lg:w-1/2 space-y-6">
             <div className="inline-block px-4 py-1 bg-brand-light/10 rounded-full mb-2">
@@ -39,7 +38,6 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* MISSÃO / VISÃO / VALORES */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
           {CORPORATE_IDENTITY.map((item, index) => {
             const Icon = iconMap[item.iconName] || Target;
@@ -59,7 +57,6 @@ const AboutSection: React.FC = () => {
           })}
         </div>
 
-        {/* HISTÓRIA (TIMELINE) */}
         <div id="history" className="relative">
            <div className="text-center mb-16">
               <span className="text-brand-light font-bold tracking-widest uppercase text-sm">Linha do Tempo</span>
@@ -67,19 +64,15 @@ const AboutSection: React.FC = () => {
            </div>
 
            <div className="relative max-w-5xl mx-auto">
-             {/* Vertical Line */}
              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2 md:translate-x-0"></div>
 
              {HISTORY_DATA.map((item, index) => (
                <div key={index} className={`relative mb-12 flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                  
-                 {/* Spacer for desktop alternating */}
                  <div className="flex-1 hidden md:block"></div>
                  
-                 {/* Dot */}
                  <div className="absolute left-4 md:left-1/2 w-6 h-6 bg-brand-light rounded-full border-4 border-white shadow-md z-10 -translate-x-1/2 md:translate-x-1/2"></div>
 
-                 {/* Content Card */}
                  <div className="flex-1 w-full pl-12 md:pl-0 md:px-10">
                    <FadeInOnScroll delay={index * 100} className={index % 2 === 0 ? 'md:text-left' : 'md:text-right'}>
                      <div className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:border-brand-light/50 transition-colors relative`}>

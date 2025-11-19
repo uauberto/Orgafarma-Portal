@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import ServicesSection from './components/ServicesSection';
-import StatsSection from './components/StatsSection';
-import AboutSection from './components/AboutSection';
-import Footer from './components/Footer';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfUse from './components/TermsOfUse';
-import BackToTop from './components/BackToTop';
-import { REGISTER_URL } from './constants';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import ServicesSection from './components/ServicesSection.tsx';
+import StatsSection from './components/StatsSection.tsx';
+import AboutSection from './components/AboutSection.tsx';
+import Footer from './components/Footer.tsx';
+import PrivacyPolicy from './components/PrivacyPolicy.tsx';
+import TermsOfUse from './components/TermsOfUse.tsx';
+import BackToTop from './components/BackToTop.tsx';
+import { REGISTER_URL } from './constants.ts';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -21,17 +21,11 @@ const App: React.FC = () => {
       } else if (hash === '#terms') {
         setCurrentView('terms');
       } else {
-        // For standard anchors (#home, #services), keep 'home' view active
-        // but we ensure we only set 'home' if we are not already there to avoid re-renders loops
-        // However, if we are on privacy and click #home, we need to switch.
         setCurrentView('home');
       }
     };
 
-    // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
-    
-    // Initial check
     handleHashChange();
 
     return () => window.removeEventListener('hashchange', handleHashChange);
@@ -51,10 +45,8 @@ const App: React.FC = () => {
             <ServicesSection />
             <AboutSection />
             
-            {/* Call to Action Banner */}
             <section className="py-24 bg-white container mx-auto px-6">
               <div className="bg-gradient-to-br from-brand-light to-brand-dark rounded-3xl p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-brand-dark/20 group">
-                {/* Animated background elements */}
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
                 <div className="absolute -top-24 -left-24 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000"></div>
                 <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-dark opacity-50 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>

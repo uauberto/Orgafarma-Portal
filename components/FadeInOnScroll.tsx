@@ -1,5 +1,5 @@
 import React, { useRef, ReactNode } from 'react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver.ts';
 
 interface FadeInOnScrollProps {
   children: ReactNode;
